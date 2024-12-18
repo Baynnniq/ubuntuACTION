@@ -22,3 +22,5 @@ jobs:
 
       - name: Display Ngrok URL
         run: sleep 5 && curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'
+      - name: Keep Ngrok Running
+        run: sleep infinity
