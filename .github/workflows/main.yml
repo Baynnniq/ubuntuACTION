@@ -1,4 +1,4 @@
-name: Ngrok RDP
+name: Ngrok ubuntu - Baynnniq
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
           NGROK_AUTHTOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         run: |
           ngrok authtoken $NGROK_AUTHTOKEN
-          nohup ngrok tcp 3389 &
+          nohup ngrok tcp 22 &
 
       - name: Display Ngrok URL
         run: sleep 5 && curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url'
